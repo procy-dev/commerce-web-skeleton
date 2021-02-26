@@ -16,7 +16,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
         </Typography>
     );
 
-    if (!cart.line_items) return 'Loading';
+    if (!cart.line_items) return 'Loading Cart...';
 
     const renderCart = () => (
         <>
@@ -30,8 +30,8 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
         <div className={classes.cardDetails}>
             <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
             <div>
-            <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty cart</Button>
-            <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Checkout</Button>
+                <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty cart</Button>
+                <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Checkout</Button>
             </div>
         </div>
         </>
